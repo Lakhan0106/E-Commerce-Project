@@ -16,8 +16,9 @@ import man10 from '../../../women/clothing/man10.jpg';
 import man11 from '../../../women/clothing/man11.jpg';
 import man12 from '../../../women/clothing/man12.jpg';
 
-const HomeSectionCarousel = () => {
+const HomeSectionCarousel = ({sectionName}) => {
   const carouselRef = useRef();
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const responsive = {
     0: { items: 1 },
@@ -51,6 +52,7 @@ const HomeSectionCarousel = () => {
 
   return (
     <div className="relative">
+      <h2 className="text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
       <AliceCarousel
         items={items}
         responsive={responsive}
@@ -59,24 +61,28 @@ const HomeSectionCarousel = () => {
         controlsStrategy="responsive"
         ref={carouselRef}
         onSlideChanged={(e) => setActiveIndex(e.item)}
-  activeIndex={activeIndex}
+        activeIndex={activeIndex}
       />
 
-      { activeIndex !== items.length-5 && (<button
-        className="absolute top-[40%] left-2 z-10 bg-white p-2 shadow-md rounded-full"
-        onClick={() => carouselRef.current?.slidePrev()}
-      >
-        ◀
-      </button>)}
+      {activeIndex !== 0 && (
+        <button
+          className="absolute top-[40%] left-2 z-10 bg-white p-2 shadow-md rounded-full"
+          onClick={() => carouselRef.current?.slidePrev()}
+        >
+          ◀
+        </button>
+      )}
 
-      <button
-        className="absolute top-[40%] right-2 z-10 bg-white p-2 shadow-md rounded-full"
-        onClick={() => carouselRef.current?.slideNext()}
-      >
-        ▶
-      </button>
+      {activeIndex !== items.length - 5 && (
+        <button
+          className="absolute top-[40%] right-2 z-10 bg-white p-2 shadow-md rounded-full"
+          onClick={() => carouselRef.current?.slideNext()}
+        >
+          ▶
+        </button>
+      )}
     </div>
   );
 };
-const [activeIndex, setActiveIndex] = useState(0);
+
 export default HomeSectionCarousel;
