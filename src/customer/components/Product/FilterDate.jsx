@@ -1,71 +1,85 @@
-import React from "react";
+// Color options list
+export const color = [
+  "White", "Black", "Red", "Maroon", "Beige", "Pink",
+  "Green", "Yellow", "Blue", "Brown", "Purple",
+];
 
-const filterSections = [
+// All available filters
+export const filters = [
   {
-    id: "colors",
+    id: "color",
     name: "Color",
-    type: "checkbox",
-    options: ["White", "Beige", "Blue", "Brown", "Green", "Purple", "Yellow"],
+    options: [
+      { value: "white", label: "White" },
+      { value: "black", label: "Black" },
+      { value: "red", label: "Red" },
+      { value: "maroon", label: "Maroon" },
+      { value: "beige", label: "Beige" },
+      { value: "pink", label: "Pink" },
+      { value: "green", label: "Green" },
+      { value: "yellow", label: "Yellow" },
+      { value: "blue", label: "Blue" },
+      { value: "brown", label: "Brown" },
+      { value: "purple", label: "Purple" }
+    ],
   },
   {
-    id: "sizes",
+    id: "size",
     name: "Size",
-    type: "checkbox",
-    options: ["S", "M", "L"],
+    options: [
+      { value: "S", label: "S" },
+      { value: "M", label: "M" },
+      { value: "L", label: "L" }
+    ],
+
   },
+];
+
+// Additional filter groups
+export const singleFilter = [
   {
     id: "price",
     name: "Price",
-    type: "radio",
-    options: ["159-399", "399-999", "999-1999", "1999-2999", "3999-4999"],
-    display: (option) => `₹${option.replace("-", " To ₹")}`,
+    options: [
+      { value: "159-399", label: "₹159 To ₹399" },
+      { value: "399-999", label: "₹399 To ₹999" },
+      { value: "999-1999", label: "₹999 To ₹1999" },
+      { value: "1999-2999", label: "₹1999 To ₹2999" },
+      { value: "3999-4999", label: "₹3999 To ₹4999" }
+    ]
   },
   {
     id: "discount",
     name: "Discount Range",
-    type: "radio",
-    options: [10, 20, 30, 40, 50, 60, 70, 80],
-    display: (option) => `${option}% And Above`,
+    options: [
+      { value: "10", label: "10% And Above" },
+      { value: "20", label: "20% And Above" },
+      { value: "30", label: "30% And Above" },
+      { value: "40", label: "40% And Above" },
+      { value: "50", label: "50% And Above" },
+      { value: "60", label: "60% And Above" },
+      { value: "70", label: "70% And Above" },
+      { value: "80", label: "80% And Above" }
+    ]
   },
+
   {
-    id: "availability",
+    id: "stock",
     name: "Availability",
-    type: "radio",
-    options: ["In Stock", "Out Of Stock"],
-  },
+    options: [
+      { value: "in_stock", label: "In Stock" },
+      { value: "out_of_stock", label: "Out Of Stock" }
+    ]
+  }
+];
+const subCategories = [
+  { name: 'Men' },
+  { name: 'Women' },
+  { name: 'Kids' }
+];
+// Sorting options
+export const sortOptions = [
+  { name: "Price: Low to High", query: "price_low", current: false },
+  { name: "Price: High to Low", query: "price_high", current: false }
 ];
 
-const FilterData = ({ filters, handleFilterChange }) => {
-  return (
-    <aside className="w-full md:w-1/4 p-4 border-r border-gray-200">
-      {filterSections.map((section) => (
-        <div key={section.id} className="mb-6">
-          <h3 className="font-semibold mb-2">{section.name}</h3>
-          {section.options.map((option) => {
-            const isChecked =
-              section.type === "checkbox"
-                ? filters[section.id]?.includes(option)
-                : filters[section.id] === option;
-
-            return (
-              <label key={option} className="flex items-center space-x-2">
-                <input
-                  type={section.type}
-                  name={section.id}
-                  value={option}
-                  checked={isChecked}
-                  onChange={() => handleFilterChange(section.id, option)}
-                />
-                <span>
-                  {section.display ? section.display(option) : option}
-                </span>
-              </label>
-            );
-          })}
-        </div>
-      ))}
-    </aside>
-  );
-};
-
-export default FilterData;
