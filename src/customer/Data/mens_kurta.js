@@ -57,5 +57,122 @@ const mensKurtaData = [
       { name: "XXL", quantity: 8 }
     ]
   },
+    {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/g/z/y/m-kt3-vebnor-original-imahcd9sjh9jaqfh.jpeg?q=70",
+    brand: "Panash Trends",
+    title: "Jacquard Straight Kurta",
+    color: "Blue",
+    discountedPrice: 1199,
+    price: 2599,
+    discountPersent: 54,
+    size: [
+      { name: "M", quantity: 10 },
+      { name: "L", quantity: 18 },
+      { name: "XL", quantity: 22 },
+      { name: "XXL", quantity: 8 }
+    ]
+  },
+    {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/g/z/y/m-kt3-vebnor-original-imahcd9sjh9jaqfh.jpeg?q=70",
+    brand: "Panash Trends",
+    title: "Jacquard Straight Kurta",
+    color: "Blue",
+    discountedPrice: 1199,
+    price: 2599,
+    discountPersent: 54,
+    size: [
+      { name: "M", quantity: 10 },
+      { name: "L", quantity: 18 },
+      { name: "XL", quantity: 22 },
+      { name: "XXL", quantity: 8 }
+    ]
+  },
+    {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/g/z/y/m-kt3-vebnor-original-imahcd9sjh9jaqfh.jpeg?q=70",
+    brand: "Panash Trends",
+    title: "Jacquard Straight Kurta",
+    color: "Blue",
+    discountedPrice: 1199,
+    price: 2599,
+    discountPersent: 54,
+    size: [
+      { name: "M", quantity: 10 },
+      { name: "L", quantity: 18 },
+      { name: "XL", quantity: 22 },
+      { name: "XXL", quantity: 8 }
+    ]
+  },
+    {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/g/z/y/m-kt3-vebnor-original-imahcd9sjh9jaqfh.jpeg?q=70",
+    brand: "Panash Trends",
+    title: "Jacquard Straight Kurta",
+    color: "Blue",
+    discountedPrice: 1199,
+    price: 2599,
+    discountPersent: 54,
+    size: [
+      { name: "M", quantity: 10 },
+      { name: "L", quantity: 18 },
+      { name: "XL", quantity: 22 },
+      { name: "XXL", quantity: 8 }
+    ]
+  },
+    {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/g/z/y/m-kt3-vebnor-original-imahcd9sjh9jaqfh.jpeg?q=70",
+    brand: "Panash Trends",
+    title: "Jacquard Straight Kurta",
+    color: "Blue",
+    discountedPrice: 1199,
+    price: 2599,
+    discountPersent: 54,
+    size: [
+      { name: "M", quantity: 10 },
+      { name: "L", quantity: 18 },
+      { name: "XL", quantity: 22 },
+      { name: "XXL", quantity: 8 }
+    ]
+  },
+   {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/k/y/j/s-ko-d-5252purple-jompers-original-imahd947fcvhvkgz.jpeg?q=70",
+    brand: "Manthan",
+    title: "Printed Regular Kurta",
+    color: "Yellow",
+    discountedPrice: 749,
+    price: 1799,
+    discountPersent: 58,
+    size: [
+      { name: "M", quantity: 12 },
+      { name: "L", quantity: 20 },
+      { name: "XL", quantity: 15 }
+    ]
+  },
+   {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/k/y/j/s-ko-d-5252purple-jompers-original-imahd947fcvhvkgz.jpeg?q=70",
+    brand: "Manthan",
+    title: "Printed Regular Kurta",
+    color: "Yellow",
+    discountedPrice: 749,
+    price: 1799,
+    discountPersent: 58,
+    size: [
+      { name: "M", quantity: 12 },
+      { name: "L", quantity: 20 },
+      { name: "XL", quantity: 15 }
+    ]
+  },
+   {
+    imageUrl: "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/k/y/j/s-ko-d-5252purple-jompers-original-imahd947fcvhvkgz.jpeg?q=70",
+    brand: "Manthan",
+    title: "Printed Regular Kurta",
+    color: "Yellow",
+    discountedPrice: 749,
+    price: 1799,
+    discountPersent: 58,
+    size: [
+      { name: "M", quantity: 12 },
+      { name: "L", quantity: 20 },
+      { name: "XL", quantity: 15 }
+    ]
+  },
 ];
 export default mensKurtaData;

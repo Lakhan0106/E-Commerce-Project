@@ -3,6 +3,9 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import { Box, Button, Grid, LinearProgress, Rating } from '@mui/material'
 import { useState } from 'react'
 import ProductReviewCard from './ProductReviewCard'
+import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
+import mensKurtaData from '../../Data/mens_kurta';
+
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -222,7 +225,7 @@ export default function ProductDetails() {
                     <h1 className="font-semibold text-lg pd-4">Recent  Review & Rating</h1>
 
                     <div className='border p-5'>
-                        <Grid container spacing={7}>
+                        <Grid container spacing={7} justifyContent="space-between" className="mb-4">
                             <Grid item xs={7}>
                                 <div className='space-y-5'>
                                     {[1, 1, 1].map((item) => <ProductReviewCard />)}
@@ -231,42 +234,81 @@ export default function ProductDetails() {
 
                             </Grid>
 
-                            <Grid item xs={5}>
+                            <Grid item xs={5} paddingRight={20} >
                                 <h1 className='text-xl font-semibold pb-1'>Product Ratings</h1>
 
                                 <div className='flex item-center space-x-3'>
-                                    <Rating value={4.6} precision={0.5} readOnly />
+                                    <Rating value={4.6} precision={.5} readOnly />
                                     <p className='opacity-60'>555454 Ratings</p>
                                 </div>
-                                <Box>
-                                    <Grid container justifyContent="center" alignItems="center" gap={2}>
+                                <Box className="mt-5 space-y-3">
+                                    <Grid container  alignItems="center" gap={2}>
                                         <Grid item xs={2}>
                                             <p>Excellent</p>
                                         </Grid>
                                         <Grid item xs={7}>
-                                            <Box width="100%">
-                                                <LinearProgress
-                                                    variant="determinate"
-                                                    value={70}
-                                                    color="success"
-                                                    sx={{
-                                                        height: 8,
-                                                        borderRadius: 5,
-                                                        backgroundColor: 'gray',
-                                                    }}
-                                                />
-                                            </Box>
+                                            <LinearProgress sx={{bgcolor:"gray", borderRadius:4, height:7}} variant="determinate" value={50} color="success"/>
+
+                                        </Grid>
+
+                                    </Grid>
+                                      <Grid container  alignItems="center" gap={2}>
+                                        <Grid item xs={2}>
+                                            <p>Very Good</p>
+                                        </Grid>
+                                        <Grid item xs={7}>
+                                            <LinearProgress sx={{bgcolor:"gray", borderRadius:4, height:7}} variant="determinate" value={40} color="success"/>
+
+                                        </Grid>
+
+                                    </Grid>
+                                      <Grid container  alignItems="center" gap={2}>
+                                        <Grid item xs={2}>
+                                            <p>Good</p>
+                                        </Grid>
+                                        <Grid item xs={7}>
+                                            <LinearProgress sx={{bgcolor:"gray", borderRadius:4, height:7}} variant="determinate" value={30} color="success"/>
+
+                                        </Grid>
+
+                                    </Grid>
+                                      <Grid container  alignItems="center" gap={2}>
+                                        <Grid item xs={2}>
+                                            <p>Average</p>
+                                        </Grid>
+                                        <Grid item xs={7}>
+                                            <LinearProgress sx={{bgcolor:"gray", borderRadius:4, height:7}} variant="determinate" value={20} color="success"/>
+
+                                        </Grid>
+
+                                    </Grid>
+                                      <Grid container  alignItems="center" gap={2}>
+                                        <Grid item xs={2}>
+                                            <p>Poor</p>
+                                        </Grid>
+                                        <Grid item xs={7}>
+                                            <LinearProgress sx={{bgcolor:"gray", borderRadius:4, height:7}} variant="determinate" value={10} color="error"/>
 
                                         </Grid>
 
                                     </Grid>
                                 </Box>
+
                             </Grid>
 
                         </Grid>
 
                     </div>
 
+                </section>
+                {/* Similar Products */}
+
+                <section className="pt-10">
+                    <h1 className='py-5 text-xl font-bold'>Similar Product</h1>
+
+                    <div className='flex flex-wrap space-y-6 '>
+                        {mensKurtaData.map((item)=><HomeSectionCard product={item}/>)}
+                    </div>
                 </section>
 
 
