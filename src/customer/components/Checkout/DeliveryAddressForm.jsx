@@ -1,60 +1,161 @@
-import { Box, Button, Grid, TextField } from '@mui/material'
-import React from 'react'
-import AddressCard from '../AddressCard/AddressCard'
+import { Box, Button, Grid, TextField } from '@mui/material';
+import React from 'react';
+import AddressCard from '../AddressCard/AddressCard';
 
 const DeliveryAddressForm = () => {
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const data = new FormData(e.currentTarget);
+
+  const address = {
+    firstName: data.get("firstName"),
+    lastName: data.get("lastName"),
+    streetAddress: data.get("address"),
+    city: data.get("city"),
+    state: data.get("state"),
+    zipCode: data.get("zip"),
+    mobile: data.get("phoneNumber"),
+  };
+
+  console.log("address", address);
+};
+
+
   return (
-    <div>
-      <Grid container spacing={4}>
-        <Grid xs={12} lg={5} className='border rounded-e-md shadow-md-h-[30.5rem] overflow-y-scroll'>
+    <Box
+      sx={{
+        display: { xs: 'block', lg: 'flex' },
+        gap: 2,
+      }}
+    >
+      {/* Left Section - Address Card */}
+      <Box
+        sx={{
+          flex: 1,
+          border: '1px solid #ccc',
+          borderRadius: '0 8px 8px 0',
+          boxShadow: 2,
+          maxHeight: '32rem',
+          overflowY: 'auto',
+        }}
+      >
+        <Box sx={{ p: 3, borderBottom: '1px solid #ccc', cursor: 'pointer' }}>
+          <AddressCard />
+          <Button
+            sx={{ mt: 2, bgcolor: '#7e42f5', textTransform: 'none' }}
+            size="large"
+            variant="contained"
+            fullWidth
+          >
+            Deliver Here
+          </Button>
+        </Box>
+      </Box>
 
-          <div className='p-5 py-7 border-b cursur-pointer'>
-            <AddressCard />
-            <Button sx={{mt:2, bgcolor:"#7e42f5"}} size='large' variant='contained'>Deliver Here</Button>
+      {/* Right Section - Form */}
+      <Box
+        sx={{
+          flex: 1,
+          border: '1px solid #ccc',
+          borderRadius: '8px 0 0 8px',
+          boxShadow: 2,
+          p: 3,
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <Grid container spacing={2}>
+            {/* Row 1: First and Last Name */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="firstName"
+                name="firstName"
+                label="First Name"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="lastName"
+                name="lastName"
+                label="Last Name"
+                fullWidth
+              />
+            </Grid>
 
-          </div>
+            {/* Row 2: Address - full width */}
+            <Grid item xs={12}>
+              <TextField
+                required
+                id="address"
+                name="address"
+                label="Address"
+                fullWidth
+                multiline
+                rows={4}
+              />
+            </Grid>
 
-        </Grid>
+            {/* Row 3: City and State */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="city"
+                name="city"
+                label="City"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="state"
+                name="state"
+                label="State/Province/Region"
+                fullWidth
+              />
+            </Grid>
 
-        <Grid item xs={12} lg={7}>
-          <Box className="border rounded-s-md shadow-md p-5">
+            {/* Row 4: ZIP and Phone */}
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="zip"
+                name="zip"
+                label="Zip / Postal Code"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                id="phoneNumber"
+                name="phoneNumber"
+                label="Phone Number"
+                fullWidth
+              />
+            </Grid>
 
-            <form>
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6}>
+            {/* Button: Full Width */}
+            <Grid item xs={12}>
+              <Button
+                sx={{ mt: 2, py: 1.5, bgcolor: '#7e42f5', textTransform: 'none' }}
+                size="large"
+                variant="contained"
+                type="submit"
+                fullWidth
+              >
+                Deliver Here
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
 
-                    <TextField
-                    required
-                    id="firstName"
-                    name="firstName"
-                    label="firstName"
-                    fullWidth
-                    autoComplete="given-name"
-                    />
+      </Box>
+    </Box>
+  );
+};
 
-                  </Grid>
-                   <Grid item xs={12} sm={6}>
-
-                    <TextField
-                    required
-                    id="lastName"
-                    name="lastName"
-                    label="lastName"
-                    fullWidth
-                    autoComplete="given-name"
-                    />
-
-                  </Grid>
-
-                </Grid>
-            </form>
-
-          </Box>
-
-        </Grid>
-      </Grid>
-    </div>
-  )
-}
-
-export default DeliveryAddressForm
+export default DeliveryAddressForm;
