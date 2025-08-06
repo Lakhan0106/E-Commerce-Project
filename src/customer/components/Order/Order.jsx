@@ -33,7 +33,8 @@ const Order = () => {
                 </Grid>
 
             </Grid>
-            <Grid item>
+            <Grid item xs={9}>
+                
 
             </Grid>
         </div>
