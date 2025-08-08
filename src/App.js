@@ -8,6 +8,7 @@ import ProductDetails from './customer/components/ProductDetails/ProductDetails.
 import Cart from './customer/components/Cart/Cart.jsx';
 import Checkout from './customer/components/Checkout/Checkout.jsx';
 import Order from './customer/components/Order/Order.jsx';
+import OrderDetails from './customer/components/Order/OrderDetails.jsx';
 
 
 
@@ -22,7 +23,8 @@ function App() {
         {/* <ProductDetails/> */}
         {/* <Cart/> */}
         {/* <Checkout/> */}
-        <Order/>  
+        {/* <Order/>   */}
+        <OrderDetails/>
       </div>
       <Footer />
     </div>
