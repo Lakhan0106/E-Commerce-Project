@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/*' element={<CustomerRouters/>}></Route>
       </Routes>
-      <Navigation />
+      {/* <Navigation /> */}
       <div>
     
       </div>

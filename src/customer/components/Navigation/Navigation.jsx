@@ -21,6 +21,7 @@ import Avatar from '@mui/material/Avatar'
 import MenuItem from '@mui/material/MenuItem'
 import Button from '@mui/material/Button'
 import { deepPurple } from '@mui/material/colors'
+import { useNavigate } from 'react-router-dom';
 
 const navigation = {
   categories: [
@@ -147,6 +148,7 @@ const navigation = {
 }
 
 export default function Navigation() {
+  const navigate=useNavigate();
   const [open, setOpen] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
    const handleUserClick = (event) => {
@@ -164,6 +166,10 @@ export default function Navigation() {
     alert("Open sign-in modal")
   }
 
+  const handleCategoryClick=(category, section, item, close)=>{
+    navigate(`/${category.id}/${section.id}/${item.id}`);
+    close();
+  }
 
   return (
     <div className="bg-white">
